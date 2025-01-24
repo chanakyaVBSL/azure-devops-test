@@ -13,7 +13,7 @@ steps:
 - script: |
     echo Running Python script: num_sum.py
     python num_sum.py
-  displayName: 'Run Python script'
+  displayName: 'Run Python program'
 
 - script: |
     echo Compiling and running Java program: num_sum.java
