@@ -7,15 +7,20 @@ trigger:
 - main
 
 pool:
-  name: self
+  name: self  # Name of the self-hosted agent pool
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+    echo Running Python script: num_sum.py
+    python num_sum.py
+  displayName: 'Run Python script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    python num_sum.py
+    echo Compiling and running Java program: num_sum.java
     java num_sum.java
-  displayName: 'Run a multi-line script'
+  displayName: 'Run Java program'
+
+- script: |
+    echo Opening Webpage : Index.html
+    start index.html
+  displayName: 'Start HTML Page'
